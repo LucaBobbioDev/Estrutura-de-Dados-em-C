@@ -1,32 +1,25 @@
 /*
-	Name: PilhaImplementação
+	Name: PilhaImplementaï¿½ï¿½o
 	Author: Luca Bobbio
 	Date: 07/04/21 09:53
-	Description: Programa para demonstrar a utilização de estrutura do tipo pilha
+	Description: Programa para demonstrar a utilizaÃ§Ã£o de estrutura do tipo pilha
 */
 
-//Importação de bibliotecas
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
 #include <locale.h>
 
-//Sessão de Prototipação
-void push(char); //insere um elemento na pilha
-char pop(); //retira um elemento da pilha
-int isEmpty(); //testa se a pilha está vazia
-int isFull();  //testa se a pilha está cheia
-char top();  //retorna o elemento que está no topo
+void push(char);
+char pop();
+int isEmpty();
+int isFull();
+char top();
 
-
-//Variáveis Globais
 char pilha[5];
-int topo=-1;
+int topo = -1;
 
-
-//Função main
-int main()
-{
+int main(){
 	setlocale(LC_ALL,"");
 	
 	push('A');
@@ -36,83 +29,67 @@ int main()
 	push('E');
 	puts("A Pilha foi carregada com 5 elementos");
 	push('Z');
-	puts("Desempilhando o elemento que está no topo até ultimo de baixo da pilha:");
+	puts("Desempilhando o elemento que estÃ¡ no topo atÃ© ultimo de baixo da pilha:");
 	
-	while(isEmpty()!= 1)
-	{
+	while(isEmpty()!= 1){
 		char elemento;
-		elemento=pop();
+		elemento = pop();
 		printf("\n%c",elemento);
 	}
 	
-	char r=top();
+	char r = top();
 	push('Z');
 	push('Y');
 	push('X');
 	push('W');
 	push('V');
 	printf("\nA Pilha foi carregada com novos 5 elementos");
-	printf("\nDesempilhando o elemento que está no topo até ultimo de baixo da pilha:");
+	printf("\nDesempilhando o elemento que estï¿½ no topo atÃ© ultimo de baixo da pilha:");
 	
-	while(isEmpty()!= 1)
-	{
+	while(isEmpty()!= 1){
 		char elemento;
 		elemento=pop();
 		printf("\n%c",elemento);
 	}
 
 	return 0;
-}//fim do main
+}
 
-
-
-//Funções para a manipulação dos elementos da Pilha
-void push(char elem)
-{
-	if(isFull()==1)
-		puts("Stack overflow - A Pilha já está cheia!!");
-	else
-	{
+void push(char elem){
+	if(isFull()==1){
+		puts("Stack overflow - A Pilha jÃ¡ estÃ¡ cheia!!");
+	}else{
 		topo++;
 		pilha[topo]=elem;
 	}
-}//fim do push
+}
 
-
-char pop()
-{
-	if(isEmpty()==1)
-		printf("\nStack Empty - A Pilha está vazia!!");
-	else{
-	
+char pop(){
+	if(isEmpty()==1){
+		printf("\nStack Empty - A Pilha estÃ¡ vazia!!");
+	}else{
 		char elem;
 		elem = pilha[topo];
 		topo--;
 		return elem;
-		}
-}//fim do pop
+	}
+}
 
-
-int isEmpty()
-{
+int isEmpty(){
 	if(topo== -1)
-		return 1;//true	
+		return 1;
 	else
-		return 0;//false
-}//fim do IsEmpty
+		return 0;
+}
 
-
-int isFull()
-{
+int isFull(){
 	if(topo==4)
-		return 1;//true
+		return 1;
 	else
-		return 0;//false
-}//fim do IsFull
+		return 0;
+}
 
-
-char top()
-{
+char top(){
 	return pilha[topo];
 	
-}//fim do char top
+}

@@ -2,28 +2,22 @@
 	Name: ListaLigada
 	Author: Luca Bobbio
 	Date: 10/03/21 10:53
-	Description: Programa para demonstrar a utilização de estruturas (structs) na composição de
-	uma lista ligada
+	Description: Programa para demonstrar a utilizaÃ§Ã£o de estruturas (structs) na composiÃ§Ã£o de uma lista ligada
 */
 
-//Importação de bibliotecas
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
 #include <locale.h>
 
-//Definindo o struct 'pessoa'
-typedef struct pessoa
-{
+typedef struct pessoa {
 	char nome;
 	int idade;
 	float altura;
 	struct pessoa *prox;
 };
 
-//Função main
-int main ()
-{
+int main (){
 	setlocale(LC_ALL,"");
 	
 	printf("sizeof registro pessoa=%d\n", sizeof(pessoa));
@@ -31,17 +25,17 @@ int main ()
 	pessoa *novoRegistro;
 	novoRegistro = malloc(sizeof(pessoa));
 	
-	novoRegistro->nome= 'Ana';
-	novoRegistro->idade= 21;
-	novoRegistro->altura= 1,63;
-	novoRegistro->prox= novoRegistro;
+	novoRegistro->nome = 'Ana';
+	novoRegistro->idade = 21;
+	novoRegistro->altura = 1,63;
+	novoRegistro->prox = novoRegistro;
 	
 	puts("\nDados de Registro armazenados com sucesso!\n");
 	
 	printf("\nNome: %c", novoRegistro->nome);
 	printf("\nIdade: %d", novoRegistro->idade);
 	printf("\nAltura: %.2f", novoRegistro->altura);
-	printf("\nEndereço de Memória para o próximo: %c", novoRegistro->nome);	
+	printf("\nEndereÃ§o de MemÃ³ria para o prÃ³ximo: %c", novoRegistro->nome);	
 	
 	return 0;
 }
