@@ -23,8 +23,8 @@ int main (){
 	printf("sizeof registro pessoa=%d\n", sizeof(pessoa));
 	
 	pessoa *novoRegistro;
-	novoRegistro = malloc(sizeof(pessoa));
-	
+	novoRegistro = novoRegistro = (pessoa *)malloc(sizeof(pessoa));
+
 	novoRegistro->nome = 'Ana';
 	novoRegistro->idade = 21;
 	novoRegistro->altura = 1,63;

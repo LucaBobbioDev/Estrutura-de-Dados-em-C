@@ -1,4 +1,5 @@
 # Estrutura de Dados em C
+
 Esses algoritmos em C foram desenvolvidos em aula durante a matéria de estrutura de dados em 2021. 
 
 Estruturas de dados são as diversas maneiras e formas de estruturar, organizar e ordenar dados. 
